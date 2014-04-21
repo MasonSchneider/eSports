@@ -2,17 +2,20 @@ import os
 from flask import Flask, render_template, url_for, request, redirect
 
 app = Flask(__name__)
-app.config.update(DEBUG = True,)
+app.config.update(DEBUG = False,)
+
+def getNextEvent():
+    return "Club Mixer on 5/3/14"
 
 @app.route('/')
 @app.route('/index/')
 def index():
-    return render_template('esports.html')
+    return render_template('esports.html', nextE=getNextEvent())
 
 @app.route('/register/<event>')
 def registerLoL(event):    
     if str(event) == 'lol5':
-        return render_template('registerLoL.html')
+        return render_template('registerLoL.html', nextE=getNextEvent())
 
 @app.route('/registerteam/<event>', methods=['POST'])
 def registerTeam(event):
@@ -31,24 +34,24 @@ def registerTeam(event):
 
 @app.route('/events/')
 def events():
-    return render_template('events.html')
+    return render_template('events.html', nextE=getNextEvent())
 
 @app.route('/events/<message>')
 def eventsWithMessage(message):
-    return render_template('eventsMessage.html',message=message.replace("+"," "))
+    return render_template('eventsMessage.html',message=message.replace("+"," "), nextE=getNextEvent())
 
 @app.route('/eventinfo/<event>')
 def eventinfo(event):
     if str(event) == 'lol':
-        return render_template('eventinfo.html')
+        return render_template('eventinfo.html', nextE=getNextEvent())
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', nextE=getNextEvent())
 
 @app.route('/members/')
 def members():
-    return render_template('members.html')
+    return render_template('members.html', nextE=getNextEvent())
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 80))
