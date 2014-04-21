@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <title>Rose-Hulman eSports</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <style type="text/css">
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">eSports Club</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/index/">Home&nbsp;<i class="fa fa-home"></i></a>
+            </li>
+            <li class="active">
+              <a href="/about/">About&nbsp;<i class="fa fa-info"></i></a>
+            </li>
+            <li>
+              <a href="/members/">Members&nbsp;<i class="fa fa-user"></i></a>
+            </li>
+            <li>
+              <a href="/events/">Events&nbsp;<i class="fa fa-calendar"></i></a>
+            </li>
+          </ul>
+          <a href="/events/"><p id="statusInfo" class="navbar-text pull-right">Next Event: <b style="color:green;">League of Legends Tournament on 2/22/14</b></p></a>
+        </div>
+        <!--/.navbar-collapse -->
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="page-header">Rose-Hulman eSports Club <small>Est. December 2013</small></h1>
+      <h3>Purpose</h3>
+      <p>Our club's purpose is to host events such as viewing parties, amateur tournaments, and coaching for the enjoyment of eSports at Rose-Hulman Institute of Technology.</p>
+      <h3>Constitution</h3>
+      <p>Our constitution can be found <a href="{{ url_for('static', filename='eSportsConstitution.docx') }}">here</a>.<br></p>
+      <h3>Founding<br></h3>
+      <p>This club was founded by Mason Schneider, Mark Hein, and Josh Wright on the belief that the Rose-Hulman community is one that loves competitive gaming and that a club was needed to increase the social factor of this type of hobby.</p>
+      <hr>
+      <footer>
+        <p>&copy; Rose-Hulman eSports Club 2014</p>
+      </footer>
+    </div>
+    <!-- /container -->
+    <p></p>
+  </body>
+
+</html>

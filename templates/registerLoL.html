@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <title>Rose-Hulman eSports</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <style type="text/css">
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">eSports Club</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/index/">Home&nbsp;<i class="fa fa-home"></i></a>
+            </li>
+            <li>
+              <a href="/about/">About&nbsp;<i class="fa fa-info"></i></a>
+            </li>
+            <li>
+              <a href="/members/">Members&nbsp;<i class="fa fa-user"></i></a>
+            </li>
+            <li class="active">
+              <a href="/events/">Events&nbsp;<i class="fa fa-calendar"></i></a>
+            </li>
+          </ul>
+          <a href="/events/"><p id="statusInfo" class="navbar-text pull-right">Next Event: <b style="color:green;">League of Legends Tournament on 2/22/14</b></p></a>
+        </div>
+        <!--/.navbar-collapse -->
+      </div>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <h1 class="page-header">Register a Team.<br></h1>
+      <form method="post" action="/registerteam/lol5">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label class="control-label">Team Name</label>
+              <div class="controls">
+                <input id="team" name="team" placeholder="TSM" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <a></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <h3>Team Members:<br></h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">Email</label>
+              <div class="controls">
+                <input id="email" name="email" placeholder="league@rose-hulman.edu" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">Summoner Name</label>
+              <div class="controls">
+                <input id="summoner" placeholder="Dyrus" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <a id="add" class="btn btn-success">Add Team Member&nbsp; <i class="fa fa-plus"></i></a>
+            <span id="warning" class="label label-danger">Field left empty</span>
+          </div>
+        </div>
+        <table id="team" class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Email<br></th>
+              <th>Summoner Name<br></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <button id="register" type="submit" class="btn btn-primary">Register Team<br></button>
+      </form>
+      <hr>
+      <footer>
+        <p>&copy; Rose-Hulman eSports Club 2014</p>
+      </footer>
+    </div>
+    <!-- /container -->
+    <p></p>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/lolteamadder.js') }}"></script>
+  </body>
+
+</html>
