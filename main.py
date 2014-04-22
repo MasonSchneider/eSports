@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, url_for, request, redirect
 
 app = Flask(__name__)
-app.config.update(DEBUG = False,)
+app.config.update(DEBUG = True,)
 
 def getNextEvent():
     return "Club Mixer on 5/3/14"
@@ -42,8 +42,11 @@ def eventsWithMessage(message):
 
 @app.route('/eventinfo/<event>')
 def eventinfo(event):
-    if str(event) == 'lol':
-        return render_template('eventinfo.html', nextE=getNextEvent())
+    if event == 'lol14':
+        return render_template('lol14info.html', nextE=getNextEvent())
+    elif event == 'mixer14':
+        return render_template('mixer14info.html', nextE=getNextEvent())
+    return redirect(url_for('index'))
 
 @app.route('/about/')
 def about():

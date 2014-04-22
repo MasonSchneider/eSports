@@ -13,6 +13,7 @@
       body {
         padding-top: 50px;
         padding-bottom: 20px;
+        background: url({{ url_for('static', filename='img/crossword.png') }}) repeat 0 0;
       }
     </style>
   </head>
@@ -48,12 +49,16 @@
     </div>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
-      <h1 class="page-header">Upcoming eSports Events<br></h1>
+      <h1 class="page-header">eSports Events<br></h1>
+      <h3>Upcoming:</h3>
       <ul class="list-group">
         <li class="list-group-item">
-          <a href="/eventinfo/lol">League of Legends: February 22, 2014</a><br></li>
+          <a href="/eventinfo/mixer14">Club Mixer: May 3, 2014</a><br></li>
+      </ul>
+      <h3>Previous:</h3>
+      <ul class="list-group">
         <li class="list-group-item">
-          <a href="#">Starcraft II: Heart of the Swarm: TBD</a><br></li>
+          <a href="/eventinfo/lol14">League of Legends: February 22, 2014</a><br></li>
       </ul>
       <hr>
       <footer>
