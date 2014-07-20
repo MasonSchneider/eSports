@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config.update(DEBUG = True,)
 
 def getNextEvent():
-    return "Club Mixer on 5/3/14"
+    return "Club Meeting TBD"
 
 @app.route('/')
 @app.route('/index/')
