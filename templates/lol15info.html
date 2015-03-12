@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <title>Rose-Hulman eSports</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <style type="text/css">
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        background: url({{ url_for('static', filename='img/crossword.png') }}) repeat 0 0;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">eSports Club</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/index/">Home&nbsp;<i class="fa fa-home"></i></a>
+            </li>
+            <li>
+              <a href="/about/">About&nbsp;<i class="fa fa-info"></i></a>
+            </li>
+            <li>
+              <a href="/members/">Members&nbsp;<i class="fa fa-user"></i></a>
+            </li>
+            <li class="active">
+              <a href="/events/">Events&nbsp;<i class="fa fa-calendar"></i></a>
+            </li>
+          </ul>
+          <a href="/events/"><p id="statusInfo" class="navbar-text pull-right">Next Event: <b style="color:green;">{{ nextE }}</b></p></a>
+        </div>
+        <!--/.navbar-collapse -->
+      </div>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <h1 class="page-header">League of Legends <small>March 14-15, 2015</small></h1>
+      <h3>About this event:<br></h3>
+      <p>This event will be a League of Legends 5v5 tournament. The top three places will receive prizes. Players can be registered only once. The 5v5 matches will also be on a twitch stream with the potential of casters.<br></p>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>When?</h3>
+          <p>This event will begin March 14, 2015. The event will start at 3PM EST, teams are expected to arrive at this time and matches will begin around 3:30PM EST once rules have been explained and teams have been accounted for. The final match will be held on March 15th in the same room at 5PM EST.<br></p>
+        </div>
+        <div class="col-md-6">
+          <h3>Where?</h3>
+          <p>This event will be hosted in the Myers Presentation Room at Rose-Hulman Institute of Technology. This room has been reserved and teams will have private rooms for their matches. Competitors are required to be in the Presentation Room at the start of the event for rule coverage. Once event goers report to this room more information will be provided about competition rooms.<br></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>5v5 Rules:<br></h2>
+          <dl>
+            <dt>Champions and Skins:</dt>
+            <dd>All champions and skins are allowed in this tournament.<br></dd>
+            <dt>Items:<br></dt>
+            <dd>All items will be allowed in this tournament.<br></dd>
+            <dt>Winning:</dt>
+            <dd>To win a team must destroy the other team's nexus</dd>
+            <dt>Map:</dt>
+            <dd>Every game shall be played on Summoners Rift.</dd>
+            <dt>Bracket:</dt>
+            <dd>The bracket will be seeded randomly and every match will be a 1 match series except for the 2 final matches which will be a series of 3.</dd>
+            <dt>Pick Order:</dt>
+            <dd>The tournament will be draft mode and pick order will be decided on by flipping a coin.</dd>
+            <dt>Timing:</dt>
+            <dd>All participants have 10 minutes to report for their match once it is possible to be played or they will be disqualified.</dd>
+            <dt>Teams:</dt>
+            <dd>A maximum of 16 teams may register.</dd>
+          </dl>
+          <!-- <a href="/register/lol5" class="btn btn-primary">Register a Team</a> -->
+        </div>
+        <div class="col-md-6">
+          <h2>Registration:<br></h2>
+          <form id="register" action="http://formspree.io/schneimd@rose-hulman.edu" method="POST">
+            <div class="form-group">
+              <label for="team">Team Name</label>
+              <input type="text" class="form-control" id="team" name="team" placeholder="Team Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Contact Email</label>
+              <input type="email" class="form-control" id="email" name="_replyto" placeholder="Contact Email">
+            </div>
+            <div class="form-group">
+              <label for="sum1">Summoner Name 1</label>
+              <input type="text" class="form-control" id="sum1" name="sum1" placeholder="Summoner Name 1">
+            </div>
+            <div class="form-group">
+              <label for="sum2">Summoner Name 2</label>
+              <input type="text" class="form-control" id="sum2" name="sum2" placeholder="Summoner Name 2">
+            </div>
+            <div class="form-group">
+              <label for="sum3">Summoner Name 3</label>
+              <input type="text" class="form-control" id="sum3" name="sum3" placeholder="Summoner Name 3">
+            </div>
+            <div class="form-group">
+              <label for="sum4">Summoner Name 4</label>
+              <input type="text" class="form-control" id="sum4" name="sum4" placeholder="Summoner Name 4">
+            </div>
+            <div class="form-group">
+              <label for="sum5">Summoner Name 5</label>
+              <input type="text" class="form-control" id="sum5" name="sum5" placeholder="Summoner Name 5">
+            </div>
+            <input type="hidden" name="_next" value="http://rhesports.com/events/Team+Registered+Successfully" />
+            <input type="hidden" name="_subject" value="New team!" />
+            <input type="hidden" name="_cc" value="heinmr@rose-hulman.edu" />
+            <input type="text" name="_gotcha" style="display:none" />
+            <button type="submit" class="btn btn-primary">Register</button> <span id="warning" class="hidden label label-danger"></span>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; Rose-Hulman eSports Club 2014</p>
+      </footer>
+    </div>
+    <!-- /container -->
+    <p></p>    
+    <script type="application/javascript">
+      $("#register").submit(function(e) {
+          $(".form-control").each(function()  {
+              if ($(this).val().length <= 0) {
+                  $("#warning").removeClass("hidden");
+                  $("#warning").text("All fields required");
+                  e.preventDefault();
+                  return false;
+              }
+          });
+      });
+    </script>
+  </body>
+
+</html>

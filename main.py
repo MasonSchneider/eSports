@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config.update(DEBUG = True,)
 
 def getNextEvent():
-    return "Club Meeting TBD"
+    return "League of Legends Tournament"
 
 @app.route('/')
 @app.route('/index/')
@@ -46,6 +46,8 @@ def eventinfo(event):
         return render_template('lol14info.html', nextE=getNextEvent())
     elif event == 'mixer14':
         return render_template('mixer14info.html', nextE=getNextEvent())
+    elif event == 'lol15':
+        return render_template('lol15info.html', nextE=getNextEvent())
     return redirect(url_for('index'))
 
 @app.route('/about/')
